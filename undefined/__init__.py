@@ -1,4 +1,3 @@
-
 """
 a simple package
 """
@@ -10,6 +9,11 @@ import sys
 import types
 
 class Undefined(types.ModuleType):
+    """
+    Simply a global object that act as undefined.
+    """
+
+    __version__ = __version__
 
 
     @property
@@ -26,7 +30,12 @@ class Undefined(types.ModuleType):
 
 
 Undefined.__name__ = 'Undefined'
-Undefined = Undefined('undefined')
+Undefined = Undefined('undefined', """
+    Simply a global object that act as undefined.
+    """
+)
+
+Undefined.__version__ = __version__
 
 if sys.modules[__name__] is Undefined:
     print('doing nothing')

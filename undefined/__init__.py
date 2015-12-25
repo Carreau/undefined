@@ -26,6 +26,9 @@ class Undefined(types.ModuleType):
     def __repr__(self):
         return self.__class__.__name__
 
+    def __bool__(self):
+        return False
+
     __str__ = __repr__
 
 

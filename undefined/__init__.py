@@ -27,9 +27,10 @@ class Undefined(types.ModuleType):
         return self.__class__.__name__
 
     def __bool__(self):
-        return False
+        raise NotImplementedError('Undefined is not defined, neither True, nor False.')
 
-    __str__ = __repr__
+    def __str__(self):
+        raise NotImplementedError("Cannot represent undefined !")
 
 
 Undefined.__name__ = 'Undefined'

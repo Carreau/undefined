@@ -57,3 +57,67 @@ from undefined import Undefined
 
 I tend to be torn between lowercase, for simplicity, and Uppercase.
 
+
+# Why not `None`, difference with `None`
+
+`undefined` is likely slower, and as it is a regular Python object there are a few  on purpose (or not difference).
+
+### Unlike `None`, you can assign to it
+
+```
+>>> None = 3 
+SyntaxError: can't assign to keyword
+```
+
+```
+>>> undefined = 3
+>>> undefned
+3
+```
+
+### Unlike `None`, `undefined` is mutable
+
+```
+>>> undefined.value = 42
+>>> undefined.value
+42
+```
+
+(might be able to fix that with `__get_attr__`
+
+### Unlike `None`, `undefined` is neither true not false.
+
+If you test for boolean value of `undefind` if will raise. 
+That is to say: the following will fail:
+
+```
+value = undefined
+if value:
+   pass # will raise before reaching here.
+```
+
+You have to check for identity:
+
+```
+value = undefined
+other = 1
+if value is undefined:
+    pass # will execute
+```
+
+for info, undefined is not `True`,`False`, not undefined with respect to identity
+
+```
+>>> undefined is True
+False
+
+>>> undefined is False
+False
+
+>>>: undefined is None
+False
+```
+
+### String form
+
+`str(undefined)` raises. `repr(undefined)` is the unicode string `'Undefined'`

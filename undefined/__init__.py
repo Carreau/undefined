@@ -3,7 +3,7 @@ a simple package
 """
 
 
-__version__ = '0.0.4'
+__version__ = '0.0.5'
 
 import sys
 import types
@@ -22,6 +22,9 @@ class Undefined(types.ModuleType):
 
     def __call__(self, value):
         return value is self
+
+    def __eq__(self, other):
+        raise NotImplementedError('Cannot compare undefined')
 
     def __repr__(self):
         return self.__class__.__name__

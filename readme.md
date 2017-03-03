@@ -28,11 +28,13 @@ True
 
 # behavior
 
-It work (for now) mostly like a singleton object, meaning it's truth-y
+It work (for now) mostly like a singleton object
+
+Though it's neither truthy not falsy
 
 ```
 >>> if undefined: print(True)
-True
+raise NotImplementedError
 ```
 
 # Casing ?

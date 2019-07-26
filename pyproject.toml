@@ -1,0 +1,13 @@
+[build-system]
+requires = ["flit"]
+build-backend = "flit.buildapi"
+
+[tool.flit.metadata]
+module = "undefined"
+author = "Matthias Bussonnier"
+author-email = "bussonniermatthias@gmail.com"
+home-page = "https://github.com/Carreau/undefined"
+classifiers = ["License :: OSI Approved :: MIT License"]
+description-file = "readme.md"
+requires-python = ">=3.4"
+
